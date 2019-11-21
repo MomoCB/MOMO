@@ -1,0 +1,42 @@
+<?php 
+session_start();
+$nombre = $_SESSION['nombre'];
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>examen</title>
+</head>
+<body>
+<h1>Bienvenido <?php echo $nombre;?></h1>
+<main role="main" class="container">
+<div class="container-fluid">
+
+    <h2>Formulario</h2>
+    <form id="form1" name="form1" method="POST" action="procesar2.php" class="form-horizontal">
+        <div class="form-group">
+            <label class="container -label">Ingrese su Nombre</label>
+            <input type="text" name="nombre" id="textfield" class="form-control">
+</div>
+<div class="form-group">
+    <label class="container-label">ingrese su Telefono</label>
+    <input type="text" name="telefono" id="textfield2" class="form-control">
+</div>
+<div class="form-group">
+<img src="GenerarCaptcha.php">
+<label class="container-label">Validacion</label>
+<input type="text" name="captcha_code">
+</div>
+<button name="enviar" type="submit" class="btn btn-prymary">Enviar</button>
+</form>
+</main>
+</body>
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script src="js/bootstrap.min.js"></script>
+
+</html>
+<?php
+date_default_timezone_set("america/chihuahua");
+echo "<p align='center'>Son las ". date("H:i:s a")."</p>\n";
+?>
